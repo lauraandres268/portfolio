@@ -315,7 +315,7 @@
             <img src="Laura.jpg" alt="Foto profesional">
           </div>
           <div class="mini-info">
-            <h3>Data Scientist</h3>
+            <h3>Data & AI Analyst</h3>
             <p><strong>Empresa:</strong> Accenture</p>
             <p><strong>Industria:</strong> --</p>
             <div class="mini-links">
@@ -365,8 +365,7 @@
 
   const proyectosExtra = [
     {titulo: "Snowflake Hands-On Essentials: Data Warehouse & Data Lake", descripcion: "Snowflake - 2025"},
-    {titulo: "..", descripcion: "...."},
-    {titulo: "...", descripcion: "...."}
+    {titulo: "Introduction to Linux", descripcion: "Linux Foundation x UPV - 2023"}
   ];
 
   btn.addEventListener('click', () => {
@@ -393,18 +392,44 @@
       <div class="cards" role="list">
         <div class="card" role="listitem">
           <h3>Predicción inmobiliaria</h3>
-          <p> Implementación de técnicas de Web Scraping, Computer Vision y OCR, combinadas con redes neuronales para generar predicciones precisas del mercado. </p>
+          <p> Desarrollado en Python. Obtención de datos mediante Web Scraping, y desarrollo de técnicas de Computer Vision y Machine Learning (modelos de regresión y ensambles). Integración y despliegue de aplicación.</p>
         </div>
         
         <div class="card" role="listitem">
           <h3>Investigación en dinámica de aprendizaje redes neuronales</h3>
-          <p>Implementación desde cero de una RBM utilizando Python y su modelo matemático, junto con simulaciones de Monte Carlo en C para generar datos sintéticos.</p>
+          <p>Implementación desde cero de una RBM utilizando Python (Pytorch, Tensorflow) a partir de su modelo matemático, junto con simulaciones de Monte Carlo en C para generar datos sintéticos.</p>
         </div>
         <div class="card" role="listitem">
           <h3>Tech Mate, Agente de compras tecnológicas</h3>
-          <p>aplicación de Retrieval-Augmented Generation (RAG) para recomendar productos en comercio electrónico, realizando fine-tuning de LLMs con datos estructurados de productos para mejorar la precisión de las recomendaciones.</p>
+          <p> Aplicación de Retrieval-Augmented Generation (RAG) para recomendar productos en comercio electrónico, realizando fine-tuning de LLMs con datos estructurados de productos.</p>
         </div>
       </div>
+
+      <button id="add-projects-btn" style="margin-top:16px; padding:6px 12px; border:none; border-radius:8px; background:#5A3EBD; color:white; cursor:pointer;">
+    + Ver más proyectos
+  </button>
+</section>
+
+<!-- ======= JAVASCRIPT ======= -->
+<script>
+  const btn = document.getElementById('add-projects-btn');
+  const container = document.getElementById('cards-proyectos');
+
+  const proyectosExtra = [
+    {titulo: "Reconocimiento de Captchas", descripcion: "Identificación mediante redes convolucionales (CNN). Finetuning de modelo OCR para etiquetar imágenes y clasificar captchas."}
+  ];
+
+  btn.addEventListener('click', () => {
+    proyectosExtra.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('role','listitem');
+      card.innerHTML = `<h3>${p.titulo}</h3><p>${p.descripcion}</p>`;
+      container.appendChild(card);
+    });
+    btn.style.display = 'none';
+  });
+</script>
     </section>
 
     <!-- SKILLS -->
@@ -492,6 +517,7 @@
 </body>
 
 </html>
+
 
 
 
