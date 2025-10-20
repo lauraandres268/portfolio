@@ -389,32 +389,29 @@
     <div class="section-line" aria-hidden="true"></div>
   </div>
 
-  <div class="cards" id="cards-proyectos-extra" role="list">
+  <div class="cards" id="cards-proyectos" role="list">
     <div class="card" role="listitem">
       <h3>Predicción inmobiliaria</h3>
       <p>Desarrollado en Python. Obtención de datos mediante Web Scraping, y desarrollo de técnicas de Computer Vision y Machine Learning (modelos de regresión y ensambles). Integración y despliegue de aplicación.</p>
     </div>
-    
     <div class="card" role="listitem">
       <h3>Investigación en dinámica de aprendizaje redes neuronales</h3>
       <p>Implementación desde cero de una RBM utilizando Python (Pytorch, Tensorflow) a partir de su modelo matemático, junto con simulaciones de Monte Carlo en C para generar datos sintéticos.</p>
     </div>
-    
     <div class="card" role="listitem">
       <h3>Tech Mate, Agente de compras tecnológicas</h3>
       <p>Aplicación de Retrieval-Augmented Generation (RAG) para recomendar productos en comercio electrónico, realizando fine-tuning de LLMs con datos estructurados de productos.</p>
     </div>
   </div>
 
-  <button id="add-projects-btn-extra" style="margin-top:16px; padding:6px 12px; border:none; border-radius:8px; background:#5A3EBD; color:white; cursor:pointer;">
-    + Ver más proyectos.
+  <button id="add-projects-btn-proy" style="margin-top:16px; padding:6px 12px; border:none; border-radius:8px; background:#5A3EBD; color:white; cursor:pointer;">
+    + Ver más proyectos
   </button>
 </section>
 
-<!-- ======= JAVASCRIPT PROYECTOS ======= -->
 <script>
-  const btnProy = document.getElementById('add-projects-btn-extra');
-  const containerProy = document.getElementById('cards-proyectos-extra');
+  const btnProy = document.getElementById('add-projects-btn-proy');
+  const containerProy = document.getElementById('cards-proyectos');
 
   const proyectosExtra = [
     {
@@ -434,6 +431,7 @@
     btnProy.style.display = 'none';
   });
 </script>
+
 
 
     <!-- SKILLS -->
@@ -521,6 +519,7 @@
 </body>
 
 </html>
+
 
 
 
