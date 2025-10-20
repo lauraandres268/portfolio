@@ -330,7 +330,6 @@
     </section>
 
     <!-- CERTIFICACIONES -->
-<!-- ======= SECCIÓN PROYECTOS ======= -->
 <section id="certificaciones" aria-labelledby="proj-title">
   <div class="section-header">
     <h2 id="proj-title">Certificaciones</h2>
@@ -383,54 +382,59 @@
 
 
     <!-- PROYECTOS -->
-    <section id = 'proyectos' aria-labelledby="proj-title">
-      <div class="section-header">
-        <h2 id="proj-title">Proyectos</h2>
-        <div class="section-line" aria-hidden="true"></div>
-      </div>
+    <!-- ======= SECCIÓN PROYECTOS ======= -->
+<section id="proyectos" aria-labelledby="proj-title-proyectos">
+  <div class="section-header">
+    <h2 id="proj-title-proyectos">Proyectos</h2>
+    <div class="section-line" aria-hidden="true"></div>
+  </div>
 
-      <div class="cards" role="list">
-        <div class="card" role="listitem">
-          <h3>Predicción inmobiliaria</h3>
-          <p> Desarrollado en Python. Obtención de datos mediante Web Scraping, y desarrollo de técnicas de Computer Vision y Machine Learning (modelos de regresión y ensambles). Integración y despliegue de aplicación.</p>
-        </div>
-        
-        <div class="card" role="listitem">
-          <h3>Investigación en dinámica de aprendizaje redes neuronales</h3>
-          <p>Implementación desde cero de una RBM utilizando Python (Pytorch, Tensorflow) a partir de su modelo matemático, junto con simulaciones de Monte Carlo en C para generar datos sintéticos.</p>
-        </div>
-        <div class="card" role="listitem">
-          <h3>Tech Mate, Agente de compras tecnológicas</h3>
-          <p> Aplicación de Retrieval-Augmented Generation (RAG) para recomendar productos en comercio electrónico, realizando fine-tuning de LLMs con datos estructurados de productos.</p>
-        </div>
-      </div>
+  <div class="cards" id="cards-proyectos-extra" role="list">
+    <div class="card" role="listitem">
+      <h3>Predicción inmobiliaria</h3>
+      <p>Desarrollado en Python. Obtención de datos mediante Web Scraping, y desarrollo de técnicas de Computer Vision y Machine Learning (modelos de regresión y ensambles). Integración y despliegue de aplicación.</p>
+    </div>
+    
+    <div class="card" role="listitem">
+      <h3>Investigación en dinámica de aprendizaje redes neuronales</h3>
+      <p>Implementación desde cero de una RBM utilizando Python (Pytorch, Tensorflow) a partir de su modelo matemático, junto con simulaciones de Monte Carlo en C para generar datos sintéticos.</p>
+    </div>
+    
+    <div class="card" role="listitem">
+      <h3>Tech Mate, Agente de compras tecnológicas</h3>
+      <p>Aplicación de Retrieval-Augmented Generation (RAG) para recomendar productos en comercio electrónico, realizando fine-tuning de LLMs con datos estructurados de productos.</p>
+    </div>
+  </div>
 
-      <button id="add-projects-btn" style="margin-top:16px; padding:6px 12px; border:none; border-radius:8px; background:#5A3EBD; color:white; cursor:pointer;">
+  <button id="add-projects-btn-extra" style="margin-top:16px; padding:6px 12px; border:none; border-radius:8px; background:#5A3EBD; color:white; cursor:pointer;">
     + Ver más proyectos
   </button>
 </section>
 
-<!-- ======= JAVASCRIPT ======= -->
+<!-- ======= JAVASCRIPT PROYECTOS ======= -->
 <script>
-  const btn = document.getElementById('add-projects-btn');
-  const container = document.getElementById('cards-proyectos');
+  const btnProy = document.getElementById('add-projects-btn-extra');
+  const containerProy = document.getElementById('cards-proyectos-extra');
 
   const proyectosExtra = [
-    {titulo: "Reconocimiento de Captchas", descripcion: "Identificación mediante redes convolucionales (CNN). Finetuning de modelo OCR para etiquetar imágenes y clasificar captchas."}
+    {
+      titulo: "Reconocimiento de Captchas",
+      descripcion: "Identificación mediante redes convolucionales (CNN). Finetuning de modelo OCR para etiquetar imágenes y clasificar captchas."
+    }
   ];
 
-  btn.addEventListener('click', () => {
+  btnProy.addEventListener('click', () => {
     proyectosExtra.forEach(p => {
       const card = document.createElement('div');
       card.className = 'card';
       card.setAttribute('role','listitem');
       card.innerHTML = `<h3>${p.titulo}</h3><p>${p.descripcion}</p>`;
-      container.appendChild(card);
+      containerProy.appendChild(card);
     });
-    btn.style.display = 'none';
+    btnProy.style.display = 'none';
   });
 </script>
-    </section>
+
 
     <!-- SKILLS -->
     <section id = 'skills' aria-labelledby="skills-title">
@@ -517,6 +521,7 @@
 </body>
 
 </html>
+
 
 
 
