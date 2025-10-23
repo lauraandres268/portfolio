@@ -6,8 +6,8 @@
   <title>Portfolio Personal</title>
   <style>
         html {
-      scroll-behavior: smooth;   /* scroll suave */
-      scroll-padding-top: 70px; /* altura de tu header sticky */
+      scroll-behavior: smooth;   
+      scroll-padding-top: 70px; 
     }
     /* ===== PALETA ===== */
     :root{
@@ -61,7 +61,7 @@
       padding:0 20px;
     }
 
-    /* ===== HERO: tarjeta grande 50/50 interna ===== */
+    /* ===== HERO: tarjeta interna ===== */
     .hero-card-large{
       background:var(--card-bg);
       border-radius:18px;
@@ -70,7 +70,6 @@
       display:flex;
       gap:24px;
       align-items:stretch;
-      /* fuerza que no se pegue al header */
       margin-top:24px;
     }
 
@@ -104,7 +103,7 @@
       padding:12px 0;
     }
 
-    /* DERECHA: tarjeta interna con foto + info (está dentro del hero grande) */
+    /* DERECHA: tarjeta interna con foto + info */
     .mini-card{
       background:linear-gradient(180deg,var(--white),#fbfbff);
       border-radius:14px;
@@ -164,7 +163,7 @@
     }
     .mini-links a:hover{color:#5A3EBD}
 
-    /* ===== SEPARADOR Y TITULOS DE SECCIÓN (linea fina) ===== */
+    /* ===== SEPARADOR Y TITULOS DE SECCIÓN ===== */
     .section-header{
       margin:48px 0 18px 0;
       display:flex;
@@ -284,7 +283,7 @@
 </head>
 <body>
 
-  <!-- HEADER (igual a como querías) -->
+  <!-- HEADER -->
   <header>
     <a href="#inicio">Inicio</a>
     <a href="#certificaciones">Certificaciones</a>
@@ -381,15 +380,14 @@
 
 
 
-    <!-- PROYECTOS -->
-    <!-- ======= SECCIÓN PROYECTOS ======= -->
+<!-- ======= SECCIÓN PROYECTOS ======= -->
 <section id="proyectos" aria-labelledby="proj-title-proyectos">
   <div class="section-header">
     <h2 id="proj-title-proyectos">Proyectos</h2>
     <div class="section-line" aria-hidden="true"></div>
   </div>
 
-  <div class="cards" id="cards-proyectos" role="list">
+  <div class="cards" id="cards-proyectos-list" role="list">
     <div class="card" role="listitem">
       <h3>Predicción inmobiliaria</h3>
       <p>Desarrollado en Python. Obtención de datos mediante Web Scraping, y desarrollo de técnicas de Computer Vision y Machine Learning (modelos de regresión y ensambles). Integración y despliegue de aplicación.</p>
@@ -411,12 +409,20 @@
 
 <script>
   const btnProy = document.getElementById('add-projects-btn-proy');
-  const containerProy = document.getElementById('cards-proyectos');
+  const containerProy = document.getElementById('cards-proyectos-list'); // 👈 nuevo id
 
   const proyectosExtra = [
     {
       titulo: "Reconocimiento de Captchas",
-      descripcion: "Identificación mediante redes convolucionales (CNN). Finetuning de modelo OCR para etiquetar imágenes y clasificar captchas."
+      descripcion: "Identificación mediante redes convolucionales (CNN). Fine-tuning de modelo OCR para etiquetar imágenes y clasificar captchas."
+    },
+    {
+      titulo: "Optimización de pipelines de datos",
+      descripcion: "Diseño de procesos ETL escalables para grandes volúmenes de información usando PySpark y AWS Glue."
+    },
+    {
+      titulo: "Análisis predictivo financiero",
+      descripcion: "Modelado de series temporales con Prophet y ARIMA para proyecciones de ingresos."
     }
   ];
 
@@ -497,14 +503,12 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
   (function(){
-    // Reemplaza con tu Public Key de EmailJS
     emailjs.init("Wrmn0QGY16135oBBn");
   })();
 
   document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault(); // evita recargar la página
 
-    // Reemplaza con tus IDs de EmailJS
     emailjs.sendForm('service_ub23f0h', 'template_zpwdr3s', this)
       .then(() => {
         alert("Mensaje enviado correctamente");
@@ -519,6 +523,7 @@
 </body>
 
 </html>
+
 
 
 
